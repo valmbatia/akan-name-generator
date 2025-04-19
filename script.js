@@ -27,7 +27,7 @@ document.getElementById('submitButton').addEventListener('click', function (e) {
     return;
   }
 
-  // ✅ Accurate date calculation
+
   const date = new Date(`${year}-${month}-${day}`);
   const d = date.getDay(); // 0 = Sunday, 6 = Saturday
 
