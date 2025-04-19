@@ -1,4 +1,3 @@
-
 document.getElementById('submitButton').addEventListener('click', function (e) {
   e.preventDefault();
 
@@ -28,13 +27,9 @@ document.getElementById('submitButton').addEventListener('click', function (e) {
     return;
   }
 
-  const CC = parseInt(year.slice(0, 2));
-  const YY = parseInt(year.slice(2));
-  const MM = month;
-  const DD = day;
-
-  let d = ((4 * CC - 2 * CC - 1) + (5 * YY / 4) + (26 * (MM + 1) / 10) + DD) % 7;
-  d = Math.floor(d);
+  // ✅ Accurate date calculation
+  const date = new Date(`${year}-${month}-${day}`);
+  const d = date.getDay(); // 0 = Sunday, 6 = Saturday
 
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
   const maleNames = ['Kwasi', 'Kwadwo', 'Kwabena', 'Kwaku', 'Yaw', 'Kofi', 'Kwame'];
